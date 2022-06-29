@@ -1,0 +1,48 @@
+//Algoritmo que calcula e apresenta quanto deve ser pago por um produto, considerando a leitura do preço de etiqueta e o código da condição de pagamento. 
+//Código 1 Condição À vista em dinheiro, com 10% de desconto
+//Código 2 À vista com cartão, com 5% de desconto
+//Código 3 2X sem juros e sem desconto
+//Código 4 3X, com juros de 10%
+
+
+algoritmo "pagamento"
+// Função :
+// Autor : oprecioso
+// Data : 07/03/2022
+// Seção de Declarações
+var
+codigo, valor: real
+condicao: caractere
+
+
+
+inicio
+escreval ("Digite o valor, total de seus produtos: R$")
+leia (valor)
+escreval ("Digite qual o opção de pagamento desejada: ")
+leia(codigo)
+
+escolha codigo
+        caso 1
+             condicao <- "À vista em dinheiro com 10% de desconto"
+             valor <- valor - (10/100)*valor
+        caso 2
+             condicao <- "À vista com cartao com 5% de desconto"
+             valor <- valor - (5/100)*valor
+        caso 3
+             condicao <- "2x sem juros e sem desconto"
+             valor <- valor
+        caso 4
+             condicao <- "3x com juros de 10%"
+             valor <- (10/100)*valor + valor
+        outrocaso
+                 condicao <- "condicao invalida"
+fimescolha
+
+escreval (condicao)
+escreval ("Você pagará R$",valor)
+
+// Seção de Comandos
+
+
+fimalgoritmo

@@ -1,0 +1,92 @@
+//Faça um algoritmo para calcular o valor a ser pago pelo período de estacionamento. O usuário informa Hora e Minuto de entrada (separados) e Hora e Minuto de saída (separados). O estacionamento cobra hora cheia, ou seja, se passar um minuto ele cobra a hora inteira. Ler também o dia da semana. O valor cobrado é:
+//R$ 4,00 - 1 horas
+//R$ 7,00 - 2 horas
+//R$ 10,00 - 3 horas
+//R$ 3,00 - Hora adicional acima de 3 horas
+
+algoritmo "Estacionamento"
+// Função :
+// Autor : oprecioso
+// Data : 12/03/2022
+// Seção de Declarações
+var
+horaE, minutoE,horaS, minutoS, valorPagar, dia, total :inteiro
+
+
+inicio
+// Seção de Comandos
+escreval("Digite a hora da entrada sem os minutos: ")
+leia (horaE)
+escreval("Digite os minutos da entrada: ")
+leia (minutoE)
+escreval ("Digite a hora da saída sem os minutos: ")
+leia (horaS)
+escreval ("Digite os minutos de saída: ")
+leia (minutoS)
+escreval ("Qual é o dia de hoje ? 1 - Segunda 2 - Terça 3 - Quarta 4 - Quinta 5 - Sexta 6 - Sabado 7 - Domingo")
+leia(dia)
+
+valorPagar <- horaS - horaE
+
+se (valorPagar <= 1) e (dia <= 5) e (horaE <= 17) entao
+   escreval ("Valor à pagar: R$ 4,00 ")
+senao
+   se (valorPagar <= 2) e (dia <= 5) e (horaE <= 17) entao
+      escreval ("Valor à pagar: R$ 7,00")
+   senao
+      se (valorPagar <= 3) e (dia <= 5) e (horaE <= 17) entao
+         escreval ("Valor à pagar: R$ 10,00")
+      senao
+         se (valorPagar >= 4) e (dia <= 5) e (horaE <= 17) entao
+            escreval("Valor à pagar: R$", valorPagar*3)
+         senao
+            se (valorPagar <= 1) e (dia <= 5) e (horaE >= 17) entao
+               escreval ("Valor à pagar: R$", 4 - (4/10))
+            senao
+               se (valorPagar <= 2) e (dia <= 5) e (horaE >= 17) entao
+                  escreval ("Valor à pagar: R$", 7 - (7/10))
+               senao
+                  se (valorPagar <= 3) e (dia <= 5) e (horaE >= 17) entao
+                     escreval ("Valor à pagar: R$", 10 - (10/10))
+                  senao
+                     se (valorPagar >= 3) e (dia <= 5) e (horaE >= 17) entao
+                        escreval ("Valor à pagar: R$", (valorPagar*3) - valorPagar/10 )
+                     senao
+                        se (dia >=6 ) e (valorPagar <=1) entao
+                           escreval (2 - (2/30)
+                        senao
+                           se (dia >=6 ) e (valorPagar <=2) entao
+                              escreval (7 - (7/30))
+                           senao
+                              se (dia >=6 ) e (valorPagar <=1) entao
+                                 escreval (2 - (2/30))
+                              senao
+                                 se (dia >=6 ) e (valorPagar <=2) entao
+                                    escreval (7 - (7/30))
+                                 senao
+                                    se (dia >=6 ) e (valorPagar <=3) entao
+                                       escreval (10 - (10/30))
+                                    senao
+                                       escreval ("Valor à pagar: R$", (valorPagar*3) - valorPagar/10 )
+                                    fimse
+                                 fimse
+                              fimse
+                           fimse
+                        fimse
+                     fimse
+                  fimse
+               fimse
+            fimse
+         fimse
+      fimse
+   fimse
+fimse
+
+
+
+
+
+
+
+
+fimalgoritmo
